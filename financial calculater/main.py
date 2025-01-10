@@ -1,8 +1,7 @@
 # Alishya Xavier, Financial Calculater
 
 '''
-Create a program that completes the following basic financial calculations:
-How long it will take to save for a goal based on a weekly or monthly deposit
+
 Compound Interest Calculator 
 Budget Allocator (use set percentages to divide an income into spending categories like savings, entertainment, and food)
 Sale Price Calculator (apply discounts to prices)
@@ -14,20 +13,26 @@ Using project decomposition to figure out what other functions you need and how 
 Create your functions
 Have at least 2 people test your code to make sure it works
 '''
-while True:
 
+while True:
     def save_goal():
         #Finds what their goal is
         #Finds what there monthly or weekly deposits are 
         goal = int(input('What is your goal for how much you want to save:\n'))
         monthorweek = input('Are you going to give deposits weekly or monthly?\n')
         if monthorweek == 'weekly':
-            payw = input('')
+            payw = int(input('how much are you going to deposit?\n'))
+            total = goal/payw
+            print('It will take you',total,'weeks to reach your goal.')
+            main()
+
         elif monthorweek == 'monthly':
+            paym = int(input('how much are you going to pay monthly?\n'))
+            total1 = goal/paym
+            print('It will take',total1,'months to reach your goal.')
         else:
             print('That is not an option')
-
-        pass
+            save_goal()
     def c_i_calc():
         pass
     def budget_alloc():
@@ -35,6 +40,10 @@ while True:
     def s_p_calc():
         pass
     def tip_calc():
+        price = float(input('How much is your end total?\n'))
+        tipamount = float(input('What percentage amount would you like to tip'))
+        tipamount/price
+
         pass
     def main():
         #User interface
@@ -53,6 +62,4 @@ while True:
             tip_calc()
         else:
             print('That is not one of the options')
-            break
-
     main()
