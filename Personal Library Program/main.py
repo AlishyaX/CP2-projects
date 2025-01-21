@@ -22,8 +22,10 @@ def search_item(library, artist):
     for song in library:
         if song[0] == artist:
             print(f"- {song[1]}")
+            break
         else:
             print('There are no songs by that artist.')
+            break
 
 #This function removes a song from the library set
 def remove_item(library):
