@@ -46,5 +46,5 @@ car.setdefault("drive, 2")
 print(car)
 
 #This switches the value
-car.update("color": "pink")
+#car.update("color": "pink")
 print(car)
