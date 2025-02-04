@@ -48,3 +48,7 @@ print(car)
 #This switches the value
 #car.update("color": "pink")
 print(car)
+#Testing
+def hello():
+    print('hi')
+    
