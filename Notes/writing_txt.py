@@ -43,7 +43,7 @@ with open("Notes/user_info.csv", "r") as file:
 #Questions:
 '''
 --------------How do you find a file in a folder?-------------------
-- In the file explorer
+- You can find it in the file explorer
 
 ----------------In a python project how do you open a file?-------------
 - you can open a file by using the open() function. You would use with before that to ensure that the file properly closes after even if an error happens. In the end you would write with open("The relitive path", "what you want to do") as file: ...
