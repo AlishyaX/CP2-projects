@@ -1,4 +1,4 @@
-#Alishya Xavier, Movier Recommender
+#Alishya Xavier, Movie Recommender
 
 #imports csv from the list of movies csv file
 import csv
