@@ -69,23 +69,29 @@ def main():
     
     #An infinite loop that asks for their option until they type 'end'
     while True:
+        #Makes them have to pick at least two but can't repeat an option
         chosen_option = set()
         selected_filters = []
+
+        #Gets their options
         while True:
             choice = input("\nHow would you like to filter the movies? (Select at least 2 options)\n1. Director\n2. Genre\n3. Rating\n4. Length\n5. Notable Actors\n6. Show all movies\n7. Exit\nEnter a number for your choice (or type 'done' to finish selecting): ")
 
+            #Makes them choose at least 2 options
             if choice == 'done':
                 if len(selected_filters) >= 2:
                     break
                 else:
+                    #Reminds the user that they have to have at least 2 options
                     print("You must select at least two filters before proceeding.")
                     continue
 
+            #Makes the user have to pick a different option than the one they picked before
             if choice in chosen_option:
                 print("\nYou have already selected this option. Choose a different one.")
                 continue
 
-            # This gathers the users choice for each option and puts it in the selected filter lsit
+            # This gathers the users choice for each option and puts it in the selected filter list(gives them details on how to type in the info)
             if choice == '1':
                 director = input("Enter the director(firstname lastname): ")
                 selected_filters.append(('director', director))
@@ -117,6 +123,7 @@ def main():
                 print("That is not an option. Please enter a number from the list above.")
                 continue
 
+            #Adds it to a set so that they can't pick the same option more than once
             chosen_option.add(choice)
                 
 
@@ -143,7 +150,7 @@ def main():
         
         # This sees if they are in that function and prints all of the recommended movies if there are any
         if filtered_movies:
-            print_movies(filtered_movies)  # Display the filtered list of movies
+            print_movies(filtered_movies)
         else:
             print("\nThere are no movies based on those options.")  # If no movies match the filters, print this message
         print('\n\nYour options have now refreshed!\n\n')
