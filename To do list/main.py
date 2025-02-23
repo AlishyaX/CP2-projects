@@ -4,7 +4,7 @@
 import os
 
 #This is uppercase because it is a constant throughout the whole code
-TODO_FILE = "todo_list.txt"
+TODO_FILE = "To do list/todo_list.txt"
 
 #This function is what each function uses that loads the tasks from the file to a list 
 def load_tasks():
