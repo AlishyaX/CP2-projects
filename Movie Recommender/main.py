@@ -1,4 +1,4 @@
-#Alishya Xavier, Movier Recommender
+#Alishya Xavier, Movie Recommender
 
 #imports csv from the list of movies csv file
 import csv
@@ -22,10 +22,14 @@ def read_movies():
 
 # This function prints the entire list of movies
 def print_movies(movies):
-    # Loops through each movie in the list
-    for movie in movies:  
-        # Prints out the details of the movie 
-        print(f"Title: {movie['Title']}, Director: {movie['Director']}, Genre: {movie['Genre']}, Rating: {movie['Rating']}, Length: {movie['Length (min)']} mins, Notable Actors: {movie['Notable Actors']}")
+    if not movies:
+        print("\nNo movies found matching your criteria.")
+    else:
+        print("\nRecommended Movies:")
+        for movie in movies:
+            print(f"Title: {movie['Title']}, Director: {movie['Director']}, Genre: {movie['Genre']}, "
+                  f"Rating: {movie['Rating']}, Length: {movie['Length (min)']} mins, "
+                  f"Notable Actors: {movie['Notable Actors']}")
 
 
 # This function filters th emovies to be able to find ones in that exact information they typed in
@@ -64,42 +68,38 @@ def main():
     movies = read_movies()
     
     #An infinite loop that asks for their option until they type 'end'
-    while True: 
-        # The options the user can choose for what they want to sort the movies by
-        print("\nHow would you like to sort it by:")
-        print("1. Director")
-        print("2. Genre")
-        print("3. Rating")
-        print("4. Length")
-        print("5. Notable Actors")
-        print("6. Show all movies")
-        print('7. End')
-        
-        #A list to save all of the filters the user chooses
-        selected_filters = [] 
+    while True:
+        #Makes them have to pick at least two but can't repeat an option
+        chosen_option = set()
+        selected_filters = []
 
-        # Let the user select as many filters they want until they type in 'done'
+        #Gets their options
         while True:
-            # Asks the user for their choice
-            choice = input("Enter your choice(type 'done' when you are finished selecting your choices): ")
-            
-            # If the user types 'done' it makes sure they had at least 2 choices
+            choice = input("\nHow would you like to filter the movies? (Select at least 2 options)\n1. Director\n2. Genre\n3. Rating\n4. Length\n5. Notable Actors\n6. Show all movies\n7. Exit\nEnter a number for your choice (or type 'done' to finish selecting): ")
+
+            #Makes them choose at least 2 options
             if choice == 'done':
                 if len(selected_filters) >= 2:
-                    break  
+                    break
                 else:
-                    print("You must select at least two choices before proceeding.")
-                    continue  
-            
-            # This gathers the users choice for each option and puts it in the selected filter lsit
+                    #Reminds the user that they have to have at least 2 options
+                    print("You must select at least two filters before proceeding.")
+                    continue
+
+            #Makes the user have to pick a different option than the one they picked before
+            if choice in chosen_option:
+                print("\nYou have already selected this option. Choose a different one.")
+                continue
+
+            # This gathers the users choice for each option and puts it in the selected filter list(gives them details on how to type in the info)
             if choice == '1':
-                director = input("Enter the director: ")
+                director = input("Enter the director(firstname lastname): ")
                 selected_filters.append(('director', director))
             elif choice == '2':
                 genre = input("Enter the genre: ")
                 selected_filters.append(('genre', genre)) 
             elif choice == '3':
-                rating = input("Enter the rating: ")
+                rating = input("Enter the rating (e.g., PG, R, etc.):")
                 selected_filters.append(('rating', rating)) 
             elif choice == '4':
                 try:
@@ -110,7 +110,7 @@ def main():
                     print("That is not a valid length number.") 
                     continue 
             elif choice == '5':
-                actor = input("Enter the actor: ")
+                actor = input("Enter the name of a notable actor: ")
                 selected_filters.append(('actor', actor))
             elif choice == '6':
                 #This displays all of the movie options
@@ -120,8 +120,12 @@ def main():
                 print("Exiting the program. Bye Bye! :)")
                 return
             else:
-                print("That is not an option.")
+                print("That is not an option. Please enter a number from the list above.")
                 continue
+
+            #Adds it to a set so that they can't pick the same option more than once
+            chosen_option.add(choice)
+                
 
 
         
@@ -146,11 +150,10 @@ def main():
         
         # This sees if they are in that function and prints all of the recommended movies if there are any
         if filtered_movies:
-            print("\nRecommended Movies:")
-            print_movies(filtered_movies)  # Display the filtered list of movies
+            print_movies(filtered_movies)
         else:
             print("\nThere are no movies based on those options.")  # If no movies match the filters, print this message
-
+        print('\n\nYour options have now refreshed!\n\n')
 
 #This is the start of the whole project as it calls the main function
-    main()
+main()
