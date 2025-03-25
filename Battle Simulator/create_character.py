@@ -1,9 +1,13 @@
-# This is a inner function that creates a new character.
+from faker import Faker
+
+faker = Faker()
+
+# This is an inner function that creates a new character.
 def create_character(characters):
     try:
         # This gets the user's input for the details of the character
         name = input("Enter character name: ").strip().lower()
-        #Checks if the name already exists
+        # Checks if the name already exists
         if any(char['name'] == name for char in characters):
             print("A character with this name already exists. Choose a different name.")
             return
@@ -39,12 +43,25 @@ def create_character(characters):
             return
 
         # This adds the character to the list with all of the stats
-        characters.append({
-            'name': name, 'health': health, 'strength': strength,
-            'defense': defense, 'speed': speed, 'xp': 0, 'level': 1
-        })
-        # Lets the user know their character has been made
-        print(f"Character '{name}' created successfully!")
+        character = {
+            'name': name,
+            'health': health,
+            'strength': strength,
+            'defense': defense,
+            'speed': speed,
+            'xp': 0,
+            'level': 1
+        }
+        
+        # Assign a random weapon and skill using Faker
+        character['weapon'] = faker.word()
+        character['skill'] = faker.catch_phrase()
+
+        # Add the character to the list
+        characters.append(character)
+
+        # Lets the user know their character has been made with a weapon and skill
+        print(f"Character '{name}' created successfully with weapon: {character['weapon']} and skill: {character['skill']}!")
     except ValueError:
         # If they type in not the right format for the stats
         print("That is not a valid option.")
