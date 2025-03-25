@@ -1,5 +1,7 @@
+#Load Characters
+
 import csv
-# This is a helper function that loads characters from a csv file
+# This is a function that loads characters from a csv file
 def load_characters(file_name):
     try:
         with open(file_name, mode='r') as file:

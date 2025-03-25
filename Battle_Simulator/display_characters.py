@@ -1,4 +1,6 @@
-# This is an inner function that displays all of the characters
+# Display Characters
+
+# This is a function that displays all of the characters
 def display_characters(characters):
     # This checks if characters are in the list
     if characters:
@@ -8,4 +10,5 @@ def display_characters(characters):
                     f"Defense: {each_char['defense']}, Speed: {each_char['speed']}, XP: {each_char['xp']}, "
                     f"Level: {each_char['level']}")
     else:
+        #If there are no characters
         print("There are no characters available!")

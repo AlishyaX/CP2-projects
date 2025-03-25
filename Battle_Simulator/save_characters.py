@@ -1,8 +1,10 @@
+#Save Characters
+
 import csv
-# This is a helper function that saves the characters to the csv file
+# This function saves the characters to the csv file
 def save_characters(file_name, characters):
     if not characters:
-        print("No characters to save!")
+        print("There are no characters to save!")
         return
     with open(file_name, mode='w', newline='') as file:
         # This saves the characters into the csv file by writing it as a dictionary 
@@ -10,5 +12,5 @@ def save_characters(file_name, characters):
         writer.writeheader()
         writer.writerows(characters)
         #Lets the user know what happened
-        print(f"You have saved that character to '{file_name}'.")
+        print(f"You have saved those character to '{file_name}'.")
 

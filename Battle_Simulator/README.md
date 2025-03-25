@@ -1,5 +1,5 @@
 # Name of the project
-
+Updated Battle Simulator
 ## Project Description
 ---
 The purpose of this project is to improve my old Battle Simulator Project by implementing data visualization, statistical analysis, and random data generation using Python libraries. What was used to complete this project were Madplotlib for character stat visualization, Pandas for data manipulation and basic statistical analysis, and Faker for generating random character names and descriptions. These things were incorporated to the original code to improve the code by displaying the character's stats, loading the character's data into a DataFrame, and create random characters with different backstories. With this another thing that was changed was the main menu to be able to access new visualization and analysis features. Also on top of that to demonstrate knowledge and understanding of the library documentation, an aditional feature that was not required was added. This feature was assigning random weapons to characters using the Faker.

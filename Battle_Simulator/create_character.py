@@ -1,3 +1,7 @@
+# Create Character
+
+#ADDITIONAL FEATURE WITH FAKER(random skill and weapon)
+# This is needed for the random skill and weapon given to each character
 from faker import Faker
 
 faker = Faker()
@@ -53,6 +57,7 @@ def create_character(characters):
             'level': 1
         }
         
+        #IF I HAD MORE TIME TO IMPROVE THE CODE, I WOULD MAKE THESE EFFECT THE CHARACTERS DURING BATTLE
         # Assign a random weapon and skill using Faker
         character['weapon'] = faker.word()
         character['skill'] = faker.catch_phrase()
@@ -60,7 +65,8 @@ def create_character(characters):
         # Add the character to the list
         characters.append(character)
 
-        # Lets the user know their character has been made with a weapon and skill
+        # Lets the user know their character has been made with a weapon and skill(Doesn't do anything to stats but just gives additional backround)
+        
         print(f"Character '{name}' created successfully with weapon: {character['weapon']} and skill: {character['skill']}!")
     except ValueError:
         # If they type in not the right format for the stats

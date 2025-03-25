@@ -1,7 +1,10 @@
+#Battle
+
+#This makes it possible to take functions from other files
 from display_characters import display_characters
 from check_level_up import check_level_up
 
-# This is the inner function that makes two characters battle
+# This is the function that makes two characters battle
 def battle(characters):
     # Makes sure there are enough characters to battle
     if len(characters) < 2:
@@ -9,7 +12,7 @@ def battle(characters):
         return
 
     # Shows the user their options for characters and asks which ones they choose to fight
-    display_characters(characters)  # Pass 'characters' list to the function
+    display_characters(characters)
     char1_name = input("Enter the first character: ").strip().lower()
     char2_name = input("Enter the second character: ").strip().lower()
 

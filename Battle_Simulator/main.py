@@ -1,16 +1,11 @@
 #Alishya Xavier, Battle Simulator
 
-#Comments
-#Error Handling
-#ReadME file
 
+#These make it able for that main file to get the functions from many other files
 from visualization import radar_chart
 from data_analysis import analyze_characters
 from random_generation import generate_character
-
-
 from save_characters import save_characters
-from check_level_up import check_level_up
 from load_characters import load_characters
 from create_character import create_character
 from display_characters import display_characters
@@ -37,23 +32,34 @@ def main():
         if choice == '1':
             create_character(characters)
         elif choice == '2':
-            # Generate and add a random character to the list
+            # Generates and adds a random character to the list
             random_character = generate_character()
             characters.append(random_character)
+            #Displays to the user, the stats for the new character
             print(f"Random character '{random_character['name']}' created successfully!")
             print(f"Backstory: {random_character['backstory']}")
         elif choice == '3':
+            # If it is an actual file then it will get the characters from it
             file_name = input("Enter file name to load: ")
-            characters.extend(load_characters(file_name))
+            try:
+                characters.extend(load_characters(file_name))
+            except FileNotFoundError:
+                print("That file has not been found. Pease check the file name and try again.")
         elif choice == '4':
+            # If it is an actual file then it will save all of those characters to it
             file_name = input("Enter file name to save: ")
-            save_characters(file_name, characters)
+            try:
+                save_characters(file_name, characters)
+            except Exception:
+                    print("That file has not been found. Please try again.")
         elif choice == '5':
+            # Displays all of the characters
             display_characters(characters)
         elif choice == '6':
+            # Takes two characters to battle
             battle(characters)
         elif choice == '7':
-            # Visualize a character's stats using Matplotlib
+            # Visualizes a character's stats using Matplotlib
             char_name = input("Enter the character's name to visualize: ")
             character = next((char for char in characters if char['name'].lower() == char_name.lower()), None)
             if character:
@@ -61,15 +67,17 @@ def main():
             else:
                 print("Character not found.")
         elif choice == '8':
-            # Analyze character data using Pandas
+            # Analyzes character data using Pandas
             if characters:
                 analyze_characters(characters)
             else:
                 print("No character data available for analysis.")
         elif choice == '9':
+            # Exits the program
             print("Goodbye!")
-            break
+            exit()
         else:
+            # Error-Handling
             print("That is not an option. Try again...")
 
 # This starts the whole program
