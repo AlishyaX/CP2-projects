@@ -1,5 +1,5 @@
 from display_characters import display_characters
-
+from check_level_up import check_level_up
 # This is the inner function that makes two characters battle
 def battle(characters):
     # Makes sure there is enough characters to battle
