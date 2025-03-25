@@ -7,7 +7,7 @@ The purpose of this project is to improve my old Battle Simulator Project by imp
 ## Execution and Usage
 ---
 To use this project what you have to do is install the libraries(Matplotlib, Numpy, Pandas, and Faker) and run the code. It will then pop up as a menu to choose a number that gives all of the options that can be done. These options are to 1. Create a character manually, 2. Generate a random character, 3. Load characters from file, 4. Save characters to a file, 5. Display characters, 6. Battle, 7. Visualize a character's stats, 8. Analyze character data, and Lastly 9. Exit. First you have to have at least two characters to be able to battle and these can come from you creating them manually, randomly generating them, or getting them from another file. If you would wan to use the randomly genrated or manulay made characters in the future then make sure to save them into a file. To see what characters you have that are able to battle, you would the want to choose the display characters option. If you want to visualize the characters stats or analyze the characters data altogether then you would just have to clarify for which character for the first option and then it will show you. If you want to Battle then you just have to input two of the characters and it will show you how the battle went and who won. Lastly to exit out of the program you would input the exit option and it would leave the program.
-![Alt Text](Battle Simulator\images\Screenshot 2025-03-24 210709.png)
+![Alt Text](Battle_Simulator\images\battle.png)
 
 
 ## Used Technologies
