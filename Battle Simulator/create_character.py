@@ -1,5 +1,5 @@
 # This is a inner function that creates a new character.
-def create_character():
+def create_character(characters):
     try:
         # This gets the user's input for the details of the character
         name = input("Enter character name: ").strip().lower()

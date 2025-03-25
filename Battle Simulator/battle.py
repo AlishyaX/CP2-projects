@@ -1,5 +1,7 @@
+from display_characters import display_characters
+
 # This is the inner function that makes two characters battle
-def battle():
+def battle(characters):
     # Makes sure there is enough characters to battle
     if len(characters) < 2:
         print("There are not enough characters to battle!")

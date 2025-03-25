@@ -1,3 +1,4 @@
+import csv
 # This is a helper function that loads characters from a csv file
 def load_characters(file_name):
     try:

@@ -5,9 +5,6 @@ from load_characters import load_characters
 from create_character import create_character
 from display_characters import display_characters
 from battle import battle
-#Lets us be able to read and write to a csv file
-import csv
-
 
 def main():
     # This is a list that stores all of the characters
@@ -25,7 +22,7 @@ def main():
         choice = input("Choose an option: ")
 
         if choice == '1':
-            create_character()
+            create_character(characters)
         elif choice == '2':
             file_name = input("Enter file name to load: ")
             characters.extend(load_characters(file_name))
@@ -33,9 +30,9 @@ def main():
             file_name = input("Enter file name to save: ")
             save_characters(file_name, characters)
         elif choice == '4':
-            display_characters()
+            display_characters(characters)
         elif choice == '5':
-            battle()
+            battle(characters)
         elif choice == '6':
             print("Goodbye!")
             break

@@ -1,3 +1,4 @@
+import csv
 # This is a helper function that saves the characters to the csv file
 def save_characters(file_name, characters):
     if not characters:

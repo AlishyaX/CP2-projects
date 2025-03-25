@@ -1,5 +1,5 @@
 # This is an inner function that displays all of the characters
-def display_characters():
+def display_characters(characters):
     # This checks if characters are in the list
     if characters:
         # This displays the detail for each of the characters
