@@ -8,7 +8,7 @@ The purpose of this project is to make a program that allows users to solve the 
 ---
 To use this project what you have to do is run the program and then it will ask you if you would want to type in your coin change amount or exit. If you type 1 (type in the coin change amount) then it will ask the country and then show the types of coin currency from there. You then have to type in your target amount and then it will tell you how many coins and which coins are needed to get to that target amount. If you type in 2(Exit) then it exits out of the program.
 
-![image](Coin_Change_Problem\images\coin_change.png)
+![image](./images/coin_change.png)
 
 ## Curent Features
 ---
