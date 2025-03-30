@@ -1,0 +1,5 @@
+Country,Denomination
+USA,Penny-1,Nickel-5,Dime-10,Quarter-25
+Canada,Penny-1,Nickel-5,Dime-10,Quarter-25,Loonie-100,Twonie-200
+South Korea,Won-1,FiveWon-5,TenWon-10,FiftyWon-50,OneHundredWon-100,FiveHundredWon-500
+UK,Penny-1,TwoPence-2,FivePence-5,TenPence-10,TwentyPence-20,FiftyPence-50,Pound-100
