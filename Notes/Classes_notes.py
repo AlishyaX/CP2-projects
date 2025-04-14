@@ -57,7 +57,7 @@ print(second.content)
 #print(sentence.upper())
 
 #2. What is an object in python?
-# an instance of a class
+# An object in python is an instance of a class.
 
 #3. How do python classes relate to python objects?
 # Python classes relate to python objects as classes define the rules while the objects actually use the rules.
