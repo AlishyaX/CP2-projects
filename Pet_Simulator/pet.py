@@ -1,3 +1,5 @@
+import csv
+
 class Pet:
     def __init__(self, name, species, age):
         self.name = name
@@ -8,6 +10,18 @@ class Pet:
         self.energy = 50
         self.health = 100
         self.level = 1
+ 
+    def save(self):
+        info = {
+            "Name": self.name,
+            "Species": self.species,
+            "Age": self.age,
+            "Hunger": self.hunger,
+            "Happiness": self.happiness,
+            "Energy": self.energy,
+            "Health": self.health,
+            "Level": self.level
+        }
 
     def feed(self, food_type):
         if food_type == "basic food":

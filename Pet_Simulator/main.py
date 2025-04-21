@@ -3,8 +3,9 @@ from simulator import Simulator
 
 def main_menu():
     simulator = Simulator()
+    print('Welcome to the Pet Simulator!')
     while True:
-        print("1. Create Pet\n2. Select Pet\n3. Exit")
+        print("1. Create Pet\n2. Select Pet\n3. Save Pets\n4.Exit")
         choice = input("Choose an option: ")
         if choice == "1":
             simulator.create_pet()
@@ -36,6 +37,12 @@ def main_menu():
                     elif action == "6":
                         break
         elif choice == "3":
+            relative_path = "Pet_Simulator/pets.csv"
+            with open(relative_path, 'a') as file:
+                
+
+
+        elif choice == "4":
             print("Thankyou for using the pet simulator!")
             break
 
